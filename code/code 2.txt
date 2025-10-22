@@ -1,0 +1,35 @@
+public class EnrollmentPaymentHandler {
+
+    public static void handleBeforeInsert(List<Enrollment__c> newEnrollments){
+        for(Enrollment__c e : newEnrollments){
+            if(e.Payment_Status__c == 'Paid'){
+                e.Status_Message__c = 'Your payment is successfully received!';
+            } else if(e.Payment_Status__c == 'Pending'){
+                e.Status_Message__c = 'Your payment is pending. Please complete it soon.';
+            } else if(e.Payment_Status__c == 'Failed'){
+                e.Status_Message__c = 'Your payment has failed. Please try again.';
+            } else if(e.Payment_Status__c == 'Refunded'){
+                e.Status_Message__c = 'Your payment has been refunded successfully.';
+            }
+        }
+    }
+
+    public static void handleBeforeUpdate(List<Enrollment__c> updatedEnrollments, Map<Id, Enrollment__c> oldMap){
+        for(Enrollment__c e : updatedEnrollments){
+            Enrollment__c oldE = oldMap.get(e.Id);
+            
+            // Only trigger if Payment Status has changed
+            if(e.Payment_Status__c != oldE.Payment_Status__c){
+                if(e.Payment_Status__c == 'Paid'){
+                    e.Status_Message__c = 'Your payment is successfully received!';
+                } else if(e.Payment_Status__c == 'Pending'){
+                    e.Status_Message__c = 'Your payment is pending. Please complete it soon.';
+                } else if(e.Payment_Status__c == 'Failed'){
+                    e.Status_Message__c = 'Your payment has failed. Please try again.';
+                } else if(e.Payment_Status__c == 'Refunded'){
+                    e.Status_Message__c = 'Your payment has been refunded successfully.';
+                }
+            }
+        }
+    }
+}

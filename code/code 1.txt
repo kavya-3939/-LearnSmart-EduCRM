@@ -1,0 +1,10 @@
+ trigger EnrollmentPaymentTrigger on Enrollment__c (before insert, before update) {
+    if(Trigger.isBefore){
+        if(Trigger.isInsert){
+            EnrollmentPaymentHandler.handleBeforeInsert(Trigger.new);
+        }
+        if(Trigger.isUpdate){
+            EnrollmentPaymentHandler.handleBeforeUpdate(Trigger.new, Trigger.oldMap);
+        }
+    }
+}
