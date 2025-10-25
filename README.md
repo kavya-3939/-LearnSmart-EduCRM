@@ -1,4 +1,5 @@
 📌 Problem Statement:
+
  Educational institutions face challenges in managing student admissions, tracking
  performance, maintaining attendance, and ensuring effective communication between
  teachers, students, and parents. Many schools and colleges rely on manual processes or
@@ -37,7 +38,9 @@ Reports & Dashboards: Generate analytical reports and real-time dashboards for d
 Role-Based Access: Control access through Profiles, Roles, Sharing Rules, and Field-Level Security.
 
 Automation: Use Flows, Validation Rules, and Process Automation to minimize manual work.
+
 🚀 Project Phases
+
 📌 Phase 1: Problem Understanding & Industry Analysis
 
 ~Problem Understanding & Industry Research
