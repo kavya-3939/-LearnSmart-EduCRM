@@ -1,4 +1,4 @@
-📌 Problem Statement
+📌 Problem Statement:
  Educational institutions face challenges in managing student admissions, tracking
  performance, maintaining attendance, and ensuring effective communication between
  teachers, students, and parents. Many schools and colleges rely on manual processes or
